@@ -1,0 +1,116 @@
+:root {
+    --raw-steel: #4a4d52;
+    --dark-metal: #1e2022;
+    --oil-bronze: #3b312a;
+    --rad-green: #7cfc00;
+    --weathered-canvas: #8b7d6b;
+    --bg-color: #0d0d0d;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--weathered-canvas);
+    font-family: 'Courier New', Courier, monospace;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0;
+    padding: 20px;
+}
+
+.hero-container {
+    width: 100%;
+    max-width: 800px;
+    height: 300px;
+    background: url('path-to-your-tinkering-animation.gif') center/cover;
+    background-color: var(--dark-metal); /* Fallback */
+    border: 4px solid var(--raw-steel);
+    border-radius: 4px;
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 20px;
+    box-shadow: inset 0 0 20px rgba(0,0,0,0.8);
+}
+
+/* Simulates the glow of a campfire on the scene */
+.fire-flicker-overlay {
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: radial-gradient(circle, rgba(255,140,0,0.1) 0%, rgba(0,0,0,0.6) 100%);
+    animation: flicker 3s infinite alternate;
+    pointer-events: none;
+}
+
+@keyframes flicker {
+    0% { opacity: 0.8; }
+    50% { opacity: 0.6; }
+    100% { opacity: 0.9; }
+}
+
+#current-mode {
+    position: absolute;
+    bottom: 10px;
+    left: 20px;
+    color: var(--rad-green);
+    text-shadow: 0 0 5px var(--rad-green);
+    margin: 0;
+}
+
+.pda-interface {
+    background-color: var(--dark-metal);
+    padding: 30px;
+    border: 2px solid var(--oil-bronze);
+    border-radius: 8px;
+    text-align: center;
+    width: 100%;
+    max-width: 400px;
+}
+
+.timer-display {
+    font-size: 4rem;
+    color: var(--rad-green);
+    text-shadow: 0 0 10px rgba(124, 252, 0, 0.5);
+    margin-bottom: 20px;
+}
+
+button {
+    background-color: var(--raw-steel);
+    color: #fff;
+    border: 2px solid var(--oil-bronze);
+    padding: 10px 15px;
+    margin: 5px;
+    cursor: pointer;
+    font-family: inherit;
+    font-weight: bold;
+    transition: all 0.2s;
+}
+
+button:hover {
+    background-color: var(--oil-bronze);
+    border-color: var(--raw-steel);
+}
+
+.settings-panel {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 25px;
+    padding-top: 15px;
+    border-top: 1px dashed var(--raw-steel);
+}
+
+.setting-group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 0.8rem;
+}
+
+input[type="number"] {
+    width: 50px;
+    background-color: var(--bg-color);
+    color: var(--weathered-canvas);
+    border: 1px solid var(--raw-steel);
+    text-align: center;
+    margin-top: 5px;
+    padding: 5px;
+}
