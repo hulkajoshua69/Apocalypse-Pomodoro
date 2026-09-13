@@ -40,8 +40,8 @@ body {
     object-fit: cover; /* Ensures the video fills the frame without stretching */
     z-index: 0;
 
-    /* Default is 50% 50% (center). Lower the second percentage to slide up */
-    object-position: center 35% 69%;
+    transform: scale(1.15) translateY(-20px);
+    transform-origin: center center;
 }
 
 .fire-flicker-overlay {
