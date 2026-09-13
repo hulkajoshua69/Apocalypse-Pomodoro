@@ -2,7 +2,7 @@
     --raw-steel: #4a4d52;
     --dark-metal: #1e2022;
     --oil-bronze: #3b312a;
-    --rad-green: #7cfc00;
+    --nv-amber: #ffb642; /* The classic New Vegas HUD amber */
     --weathered-canvas: #8b7d6b;
     --bg-color: #0d0d0d;
 }
@@ -51,8 +51,9 @@ body {
     position: absolute;
     bottom: 10px;
     left: 20px;
-    color: var(--rad-green);
-    text-shadow: 0 0 5px var(--rad-green);
+    color: var(--nv-amber);
+    /* Soft amber glow */
+    text-shadow: 0 0 5px rgba(255, 182, 66, 0.7); 
     margin: 0;
 }
 
@@ -68,8 +69,9 @@ body {
 
 .timer-display {
     font-size: 4rem;
-    color: var(--rad-green);
-    text-shadow: 0 0 10px rgba(124, 252, 0, 0.5);
+    color: var(--nv-amber);
+    /* Wider ambient glow for the larger text */
+    text-shadow: 0 0 12px rgba(255, 182, 66, 0.5); 
     margin-bottom: 20px;
 }
 
