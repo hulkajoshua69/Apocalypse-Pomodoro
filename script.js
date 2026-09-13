@@ -1,3 +1,7 @@
+const startSound = new Audio('start-click.wav');
+const workAlarm = new Audio('work-done.wav');
+const breakAlarm = new Audio('break-done.wav');
+
 let countdown;
 let timeLeft = 25 * 60; // Default to 25 mins
 let isRunning = false;
@@ -42,6 +46,11 @@ function switchMode() {
 function startTimer() {
     if (isRunning) return;
     isRunning = true;
+    
+    // Reset and play the start click
+    startSound.currentTime = 0; 
+    startSound.play();
+
     countdown = setInterval(() => {
         timeLeft--;
         updateDisplay();
@@ -49,9 +58,21 @@ function startTimer() {
         if (timeLeft <= 0) {
             clearInterval(countdown);
             isRunning = false;
-            // Play alarm sound here (e.g., distant emission siren)
+            
+            // Play the appropriate alarm before switching modes
+            if (currentMode === 'WORK') {
+                workAlarm.currentTime = 0;
+                workAlarm.play();
+            } else { // It's either SHORT_BREAK or LONG_BREAK
+                breakAlarm.currentTime = 0;
+                breakAlarm.play();
+            }
+            
             switchMode();
-            startTimer(); // Auto-start next cycle, or remove this to require manual start
+            
+            // If you want the timer to automatically roll into the next cycle 
+            // without requiring a manual click, uncomment the line below:
+            startTimer(); 
         }
     }, 1000);
 }
