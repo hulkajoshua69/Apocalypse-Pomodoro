@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zone Timer</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Hero Section for the Animation -->
+    <div class="hero-container">
+        <div class="encampment-scene">
+            <!-- This is where your S.T.A.L.K.E.R. workbench animation/GIF/Canvas will go -->
+            <div class="fire-flicker-overlay"></div>
+            <h2 id="current-mode">WORK CYCLE</h2>
+        </div>
+    </div>
+
+    <!-- Timer Interface -->
+    <div class="pda-interface">
+        <div class="timer-display" id="time-left">25:00</div>
+        
+        <div class="controls">
+            <button id="start-btn">START</button>
+            <button id="pause-btn">PAUSE</button>
+            <button id="reset-btn">RESET</button>
+        </div>
+
+        <!-- Adjustable Settings -->
+        <div class="settings-panel">
+            <div class="setting-group">
+                <label>Work (min)</label>
+                <input type="number" id="work-length" value="25" min="1">
+            </div>
+            <div class="setting-group">
+                <label>Short Break (min)</label>
+                <input type="number" id="short-break-length" value="5" min="1">
+            </div>
+            <div class="setting-group">
+                <label>Long Break (min)</label>
+                <input type="number" id="long-break-length" value="15" min="1">
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
