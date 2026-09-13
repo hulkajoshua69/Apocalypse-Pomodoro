@@ -41,7 +41,7 @@ body {
     z-index: 0;
 
     /* Default is 50% 50% (center). Lower the second percentage to slide up */
-    object-position: center 35%;
+    object-position: center 35% 69%;
 }
 
 .fire-flicker-overlay {
